@@ -1,0 +1,11 @@
+version: 0.2
+phases:
+  install:
+    runtime-versions:
+      docker: 19
+  build:
+    commands:
+        - docker build -t jzhao5/docker-react2 -f Dockerfile.dev .
+  post_build:
+    commands:
+        - docker run jzhao5/docker-react2 npm run test -- --coverage
