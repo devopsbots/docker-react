@@ -9,5 +9,8 @@ phases:
   post_build:
     commands:
         - docker run jzhao5/docker-react2 npm run test -- --coverage
-
-
+        - sed "s/AWS_ACCOUNT_ID/$AWS_ACCOUNT_ID/g;s/VERSION/$VERSION/g" Dockerrun.aws.template.json > Dockerrun.aws.json
+artifacts:
+    files:
+        - Dockerrun.aws.json
+        
