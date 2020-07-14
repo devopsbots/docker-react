@@ -9,7 +9,6 @@ phases:
   post_build:
     commands:
         - docker run jzhao5/docker-react2 npm run test
-  deploy:
     provider: elasticbeanstalk
     region: "us-east-1"
     app: "docker-react2"
