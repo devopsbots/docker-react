@@ -8,16 +8,5 @@ phases:
         - docker build -t jzhao5/docker-react2 -f Dockerfile.dev .
   post_build:
     commands:
-        - docker run jzhao5/docker-react2 npm run test
-    provider: elasticbeanstalk
-    region: "us-east-1"
-    app: "docker-react2"
-    env: "DockerReact2-env"
-    bucket_name: "myapp-demo-2020"
-    bucket_path: "docker"
-    on:
-        branch: master
-    access_key_id: $AWS_ACCESS_KEY
-    secret_access_key: $AWS_SECRET_KEY
-
+        - docker run jzhao5/docker-react2 npm run test -- --coverage
 
