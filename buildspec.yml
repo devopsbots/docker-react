@@ -9,9 +9,4 @@ phases:
   post_build:
     commands:
         - echo Build completed on `date`
-        - mv /app app.zip
-
-artifacts:
-  files:
-    - .ebextensions/*
-    - app.zip
+        - aws s3 sync ./app $S3_BUCKET 
