@@ -5,8 +5,8 @@ phases:
       docker: 19
   build:
     commands:
-        - docker build -t jzhao5/docker-react2 -f Dockerfile.dev .
+        - docker build -t jzhao5/docker-react2 .
   post_build:
     commands:
         - echo Build completed on `date`
-        - aws s3 sync /app s3://myapp-demo-2020/ . --recursive
+        - aws s3 copy /app s3://myapp-demo-2020/ . --recursive
