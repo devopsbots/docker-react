@@ -9,4 +9,4 @@ phases:
   post_build:
     commands:
         - echo Build completed on `date`
-        - aws s3 sync ./app $S3_BUCKET 
+        - aws s3 sync /app s3://myapp-demo-2020/ . --recursive
