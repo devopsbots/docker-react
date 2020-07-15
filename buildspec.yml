@@ -9,3 +9,7 @@ phases:
   post_build:
     commands:
         - docker run jzhao5/docker-react2 npm run test -- --coverage
+  artifacts:
+    files:
+      - .zip/*
+      
