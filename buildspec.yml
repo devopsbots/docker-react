@@ -8,7 +8,7 @@ phases:
         - docker build -t jzhao5/docker-react2 -f Dockerfile.dev .
   post_build:
     commands:
-        - docker run jzhao5/docker-react2 npm run test -- --coverage
+        - docker run jzhao5/docker-react2 npm run test
   artifacts:
     files:
       - .zip/*
