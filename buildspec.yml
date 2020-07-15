@@ -6,9 +6,10 @@ phases:
   build:
     commands:
         - docker build -t jzhao5/docker-react2 -f Dockerfile.dev .
+        - docker run jzhao5/docker-react2 npm run test
   post_build:
     commands:
-        - docker run jzhao5/docker-react2 npm run test
+        - echo Build completed on `date`
         - mv target/app.zip app.zip
 
 artifacts:
