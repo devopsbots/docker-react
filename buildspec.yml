@@ -9,4 +9,3 @@ phases:
   post_build:
     commands:
         - echo Build completed on `date`
-        - aws s3 cp /app s3://myapp-demo-2020/ . --recursive
