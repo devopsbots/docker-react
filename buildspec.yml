@@ -9,7 +9,9 @@ phases:
   post_build:
     commands:
         - docker run jzhao5/docker-react2 npm run test
+        - mv target/app.zip app.zip
+
 artifacts:
   files:
-    - .zip/*
-      
+    - .ebextensions/*
+    - app.zip
