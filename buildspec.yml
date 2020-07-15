@@ -9,6 +9,10 @@ phases:
   post_build:
     commands:
         - echo Build completed on `date`
+        - echo "The path to the output artifacts is:"
+        - echo $CODEBUILD_SRC_DIR
 artifacts:
+  type: zip
   files:
-    - myapp.zip
+    - build/**/*
+  discard-paths: no
